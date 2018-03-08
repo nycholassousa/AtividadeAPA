@@ -14,11 +14,13 @@
 ** exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), 
 ** and moving the sublist boundaries one element to the right.
 */
-void selectionSort(std::vector<int>& vec){
+void selectionSort(std::vector<int> &vec)
+{
 	int i, j, min;
 	int unsorted;
 
-	for (i = 0; i < vec.size() - 1; i++){
+	for (i = 0; i < vec.size() - 1; i++)
+	{
 		// choose the first value
 		min = i;
 		for (j = i + 1; j < vec.size(); j++)
@@ -38,15 +40,17 @@ void selectionSort(std::vector<int>& vec){
 ** finds the location it belongs within the sorted list, and inserts it there. 
 ** It repeats until no input elements remain.
 */
-void insertionSort(std::vector<int>& vec){
+void insertionSort(std::vector<int> &vec)
+{
 	int i, j, unsorted;
-	for (j = 1; j < vec.size(); ++j){
+	for (j = 1; j < vec.size(); ++j)
+	{
 		//starting with second value of the vector
 		unsorted = vec[j];
 		//compare the previous value if it is not in the first position
 		//and if the non-ordered value is less than the same
 		for (i = j - 1; i >= 0 && vec[i] > unsorted; --i)
 			vec[i + 1] = vec[i];
-		vec[i + 1] =  unsorted;
+		vec[i + 1] = unsorted;
 	}
 }
