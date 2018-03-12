@@ -7,3 +7,4 @@ Em cada atividade, terá um arquivo makefile para rodar o código, lembrando que
 
 ## Atividades propostas
 [Trabalho 1 (Ordenação por Comparação 1)](https://github.com/nycholassousa/AtividadeAPA/tree/master/Atividade%201)
+[Trabalho 2 (Merge Sort)](https://github.com/nycholassousa/AtividadeAPA/tree/master/Atividade%202)
