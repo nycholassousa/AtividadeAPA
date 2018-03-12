@@ -1,13 +1,6 @@
 #include <chrono>
 #include "sorts.h"
 
-void selectionSort(std::vector<long> &vec);
-void insertionSort(std::vector<long> &vec);
-
-void mergeSort(std::vector<int> &vec);
-void sort(std::vector<int> &vec, std::vector<int> &tmpArray, int left, int right);
-void merge(std::vector<int> &vec, std::vector<int> &tmpArray, int leftPos, int rightPos, int rightEnd);
-
 int main(int argc, char **argv)
 {
 	// If the parameter size does not match what is expected, the following message is displayed:
@@ -85,6 +78,20 @@ int main(int argc, char **argv)
 		//End counting Time
 
 		std::cout << "Merge Sort Time Elapsed: " << time_in_milliseconds << " milliseconds" << std::endl;
+		break;
+	}
+	case 4:
+	{ //Quick Sort
+
+		std::cout << "Quick Sort selected, please wait a moment" << std::endl;
+
+		//Start counting Time
+		const auto start_time = std::chrono::steady_clock::now();
+		quicksort(vec, 0, vec.size());
+		double time_in_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start_time).count();
+		//End counting Time
+
+		std::cout << "Quick Sort Time Elapsed: " << time_in_milliseconds << " milliseconds" << std::endl;
 		break;
 	}
 	default:

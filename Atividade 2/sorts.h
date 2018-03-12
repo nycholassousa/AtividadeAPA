@@ -94,3 +94,26 @@ void mergeSort(std::vector<long>& vec){
 	std::vector<long> tmpArray(size);
 	sort(vec, tmpArray, 0, size - 1);
 }
+
+int partition(std::vector<long>& vec, int begin, int end, int who){
+	for (int i = begin; i < end; ++i){
+		if (vec[i] <= who){
+			std::swap(vec[i], vec[begin]);
+			begin++;
+		}
+	}
+	return begin - 1;
+}
+
+void quicksort(std::vector<long>& vec, int begin, int end){
+	if (begin >= end)
+		return;
+
+	int middle = begin + (end - begin)/2;
+	std::swap(vec[middle], vec[begin]);
+
+	int midpoint = partition(vec, begin + 1, end, vec[begin]);
+	std::swap(vec[begin], vec[midpoint]);
+	quicksort(vec, begin, midpoint);
+	quicksort(vec, midpoint + 1, end);
+}
