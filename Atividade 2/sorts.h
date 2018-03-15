@@ -59,20 +59,26 @@ void insertionSort(std::vector<long> &vec)
 	}
 }
 
+// Merges two subarrays of arr[].
+// First subarray is arr[l..m]
+// Second subarray is arr[m+1..r]
 void merge(std::vector<long>& vec, std::vector<long>& tmpArray, long leftPos, long rightPos, long rightEnd){
-	long leftEnd = rightPos - 1;
-	long tmpPos = leftPos;
+	long leftEnd = rightPos - 1; //Initial index of first subarray
+	long tmpPos = leftPos; //Initial index of second subarray
 	long numElements = rightEnd - leftPos + 1;
 
+ 	/* Merge the temp arrays back into arr[l..r]*/
 	while(leftPos <= leftEnd && rightPos <= rightEnd)
 		if(vec[leftPos] <= vec[rightPos])
     		tmpArray[tmpPos++] = vec[leftPos++];
 		else
     		tmpArray[tmpPos++] = vec[rightPos++];
 
+	/* Copy the remaining elements of L[], if there are any */
 	while(leftPos <= leftEnd)    // Copy rest of first half
 		tmpArray[tmpPos++] = vec[leftPos++];
 
+	/* Copy the remaining elements of R[], if there are any */
 	while(rightPos <= rightEnd)  // Copy rest of right half
 		tmpArray[tmpPos++] = vec[rightPos++];
 
@@ -80,15 +86,31 @@ void merge(std::vector<long>& vec, std::vector<long>& tmpArray, long leftPos, lo
 		vec[rightEnd] = tmpArray[rightEnd];
 }
 
+/*
+If r > l
+     1. Find the middle point to divide the array into two halves:  
+             middle m = (l+r)/2
+     2. Call mergeSort for first half:   
+             Call mergeSort(arr, l, m)
+     3. Call mergeSort for second half:
+             Call mergeSort(arr, m+1, r)
+     4. Merge the two halves sorted in step 2 and 3:
+             Call merge(arr, l, m, r)
+*/
+
 void sort(std::vector<long>& vec, std::vector<long>& tmpArray, long left, long right ){
 	if( left < right ){
 		long center = ( left + right ) / 2;
+
+		// Sort first and second halves
 		sort( vec, tmpArray, left, center );
 		sort( vec, tmpArray, center + 1, right );
+
 		merge( vec, tmpArray, left, center + 1, right );
 	}
 }
 
+//Call merge sort using vector
 void mergeSort(std::vector<long>& vec){
 	long size = vec.size();
 	std::vector<long> tmpArray(size);

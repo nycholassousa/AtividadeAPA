@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 		std::cout << "1: Selection Sort" << std::endl;
 		std::cout << "2: Insertion Sort" << std::endl;
 		std::cout << "3: Merge Sort" << std::endl;
+		std::cout << "4: Quick Sort" << std::endl;
 
 		return 1;
 	}
