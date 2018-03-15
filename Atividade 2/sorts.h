@@ -119,9 +119,10 @@ void mergeSort(std::vector<long>& vec){
 
 int partition(std::vector<long>& vec, int begin, int end, int who){
 	for (int i = begin; i < end; ++i){
-		if (vec[i] <= who){
+		// If current element is smaller than or equal to pivot
+		if (vec[i] <= who){ //who == pivot
 			std::swap(vec[i], vec[begin]);
-			begin++;
+			begin++; // increment index of smaller element, to not test with him again
 		}
 	}
 	return begin - 1;
@@ -132,10 +133,10 @@ void quicksort(std::vector<long>& vec, int begin, int end){
 		return;
 
 	int middle = begin + (end - begin)/2;
-	std::swap(vec[middle], vec[begin]);
+	std::swap(vec[middle], vec[begin]); //send pivot to begin
 
-	int midpoint = partition(vec, begin + 1, end, vec[begin]);
-	std::swap(vec[begin], vec[midpoint]);
+	int midpoint = partition(vec, begin + 1, end, vec[begin]); //set midpoint
+	std::swap(vec[begin], vec[midpoint]); //send pivot to correct location after tests
 	quicksort(vec, begin, midpoint);
 	quicksort(vec, midpoint + 1, end);
 }
