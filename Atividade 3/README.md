@@ -12,6 +12,7 @@ Deadline: Quinta, 15/03/2018
     2: Insertion Sort
     3: Merge Sort
     4: Quick Sort
+    5: Heap Sort
 
 ## Compilando o programa
 Caso você possua o g++, pode executar o seguinte código no terminal, na pasta do código:
