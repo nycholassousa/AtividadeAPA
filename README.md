@@ -10,4 +10,9 @@ Em cada atividade, terá um arquivo makefile para rodar o código, lembrando que
 
 [Trabalho 2 (Merge Sort e Quick Sort)](https://github.com/nycholassousa/AtividadeAPA/tree/master/Atividade%202)
 
-[Trabalho 3 (Heap Sort)](https://github.com/nycholassousa/AtividadeAPA/tree/master/Atividade%202)
+[Trabalho 3 (Heap Sort)](https://github.com/nycholassousa/AtividadeAPA/tree/master/Atividade%203)
+
+[Trabalho 4 (Count Sort / Radix Sort)](https://github.com/nycholassousa/AtividadeAPA/tree/master/Atividade%204)
+
+##Observações
+Algumas atividades tiveram alguns erros na informação do readme, onde o mesmo passou da data limite, PORÉM, o algoritmo/código permaneceu no prazo permitido, não interferindo no que foi pedido em atividade.

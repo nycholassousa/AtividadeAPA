@@ -220,6 +220,6 @@ void countsort(std::vector<long> &vec)
 		temp[aux[vec[i] - min] - 1] = vec[i];
 		aux[vec[i] - min]--;
 	}
-	
+
 	vec.assign(temp.begin(), temp.end());
 }
