@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 		std::cout << "4: Quick Sort" << std::endl;
 		std::cout << "5: Heap Sort" << std::endl;
 		std::cout << "6: Count Sort" << std::endl;
+		std::cout << "7: Radix Sort" << std::endl;
 
 		return 1;
 	}
@@ -119,6 +120,21 @@ int main(int argc, char **argv)
 		//Start counting Time
 		const auto start_time = std::chrono::steady_clock::now();
 		countsort(vec);
+		double time_in_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start_time).count();
+		//End counting Time
+		
+		std::cout << "Count Sort Time Elapsed: " << time_in_milliseconds << " milliseconds" << std::endl;
+		break;
+
+	}
+	case 7:
+	{//Radix Sort
+
+		std::cout << "Count Sort selected, please wait a moment" << std::endl;
+
+		//Start counting Time
+		const auto start_time = std::chrono::steady_clock::now();
+		radixsort(vec);
 		double time_in_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start_time).count();
 		//End counting Time
 		

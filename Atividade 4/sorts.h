@@ -191,9 +191,10 @@ void heapsort(std::vector<long> &vec)
 /*************************************************/
 void countsort(std::vector<long> &vec)
 {
-	int max = vec[0];
-	int min = vec[0];
+	long max = vec[0];
+	long min = vec[0];
 
+	//Find maximum and minimum values
 	for (int i = 0; i < vec.size(); i++)
 	{
 		if (vec[i] > max)
@@ -202,7 +203,9 @@ void countsort(std::vector<long> &vec)
 			min = vec[i];
 	}
 
+	//Create vector "C"
 	std::vector<long> aux(max - min + 1);
+	//Fill with 0
 	std::fill(aux.begin(), aux.end(), 0);
 
 	for (int i = 0; i < vec.size(); i++)
@@ -221,5 +224,56 @@ void countsort(std::vector<long> &vec)
 		aux[vec[i] - min]--;
 	}
 
+	//Copy content to vec
 	vec.assign(temp.begin(), temp.end());
+}
+
+/*************************************************/
+void countSort(std::vector<long> &vec, int exp)
+{
+    int output[vec.size()]; // output array
+    int i, count[10] = {0};
+ 
+    // Store count of occurrences in count[]
+    for (i = 0; i < vec.size(); i++)
+        count[ (vec[i]/exp)%10 ]++;
+ 
+    // Change count[i] so that count[i] now contains actual
+    //  position of this digit in output[]
+    for (i = 1; i < 10; i++)
+        count[i] += count[i - 1];
+ 
+    // Build the output array
+    for (i = vec.size() - 1; i >= 0; i--)
+    {
+        output[count[ (vec[i]/exp)%10 ] - 1] = vec[i];
+        count[ (vec[i]/exp)%10 ]--;
+    }
+ 
+    // Copy the output array to arr[], so that arr[] now
+    // contains sorted numbers according to current digit
+    for (i = 0; i < vec.size(); i++)
+        vec[i] = output[i];
+}
+
+void radixsort(std::vector<long> &vec)
+{
+	long max = vec[0];
+	long min = vec[0];
+	int position = 1;
+
+	std::vector<long> counterArray(10);
+	std::vector<long> sorted(max - min + 1);
+
+	//Find maximum and minimum values
+	for (int i = 0; i < vec.size(); i++)
+	{
+		if (vec[i] > max)
+			max = vec[i];
+		if (vec[i] < min)
+			min = vec[i];
+	}
+
+	for (int exp = 1; max/exp > 0; exp *= 10)
+        countSort(vec, exp);
 }
