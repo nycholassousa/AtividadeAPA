@@ -1,9 +1,7 @@
 # Ordenação - Análise e Projeto de Algoritmo
 Implemente os seguintes algoritmos de ordenação:
 
-  - Merge Sort
-
-Deadline: Quinta, 15/03/2018
+  - Heap Sort
 
 ## Execução do Programa
     Use: ./programname number file_in file_out

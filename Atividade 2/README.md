@@ -2,8 +2,7 @@
 Implemente os seguintes algoritmos de ordenação:
 
   - Merge Sort
-
-Deadline: Quinta, 15/03/2018
+  - Quick Sort
 
 ## Execução do Programa
     Use: ./programname number file_in file_out
