@@ -16,6 +16,8 @@ Em cada atividade, terá um arquivo makefile para rodar o código, lembrando que
 
 [Trabalho 4 (Count Sort / Radix Sort)](https://github.com/nycholassousa/AtividadeAPA/tree/master/Atividade%204)
 
+[Trabalho 5 (Algoritmos Gulosos)](https://github.com/nycholassousa/AtividadeAPA/tree/master/Atividade%205)
+
 ## Observações
 
 Algumas atividades tiveram alguns erros na informação do readme, onde o mesmo passou da data limite, PORÉM, o algoritmo/código permaneceu no prazo permitido, não interferindo no que foi pedido em atividade.
